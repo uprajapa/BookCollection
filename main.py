@@ -33,4 +33,12 @@ print(book.to_json())
 book.update(name="GOT", author="ABC")
 print(book.to_json())   #updating same book
 
+#Getting all the books
+books = []
+for book in book.objects():
+    books.append(book.to_json())
+print(books)
 
+#Delete a book
+book = Book.objects(book_id=1).first()
+book.delete()
